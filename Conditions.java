@@ -161,6 +161,34 @@ public class Conditions
           else{
                Tools.println("Strings are equal");
           }
+
+          /*
+
+          This is an example of a "short circuit".
+
+          For an AND operation, if the left operand is false, the right operand will not be evaluated because the AND operation is false regardless.
+
+           */
+          if(firstStr != null && firstStr.length() > 3){
+               Tools.println("The first string has more than 3 characters.");
+          }
+
+          /*
+
+          This is another "short circuit" example.
+
+          For an OR operation, if the left operand is true, the right operand will not be evaluated because the OR operation is true regardless.
+
+          This may result in a bug. If ht efirst word is "kiwi", we will never read the second word from the stream, which may result in unexpected behaviour.
+           */
+          Tools.print("Enter your two favorite fruits: ");
+          if(scan.next().equals("kiwi") || scan.next().equals("kiwi")){
+               Tools.println("Kiwi is one of my favorites too!");
+          }
+
+          Tools.print("Enter your favorite ice cream flavor: ");
+          String flavor = scan.next();
+          Tools.println("Your favorite ice cream flavor is: " + flavor);
      }
 
      public static void main(String[] args){
