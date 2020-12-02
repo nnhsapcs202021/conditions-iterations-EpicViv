@@ -191,6 +191,38 @@ public class Conditions
           Tools.println("Your favorite ice cream flavor is: " + flavor);
      }
 
+     public static void extraOperatorsExample(){
+          /*
+
+          augmented assignment operators: +=, -=, *=, /=, %=
+
+               These are the same as in Python.
+               Perform the specified mathematical operation to the variable and then assign the resulting value to the same variable.
+
+           */
+
+          int x = 7;
+          int y = 7;
+          int z = 7;
+
+          x = x + 1;
+          y += 1;
+          z++;
+
+          /*
+
+          post increment/decrement operators (++/--)
+
+               These are equivalent to adding/subtracting 1 to/from the variable
+               These return the avlue before performing the increment/decrement.
+           */
+
+          int a = 7;
+          int b = a++;
+
+          a--; //decrement as well!
+     }
+
      public static void main(String[] args){
           stringExample();
      }
