@@ -54,7 +54,17 @@ public class CommonLoopAlgorithms
     */
    public static int findMax() 
    {
-       return 0;
+       Scanner s = new Scanner(System.in);
+       System.out.print("Enter integers (enter a letter to stop) : ");
+       int max = s.nextInt();
+       
+       while(s.hasNextInt()){
+           int next = s.nextInt();
+           if (next > max){
+               max = next;
+           }
+       }
+       return max;
    }
 
    /*
