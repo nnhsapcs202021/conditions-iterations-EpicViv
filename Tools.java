@@ -4,10 +4,13 @@ import java.util.Scanner;
 public class Tools {
      public static math math;
 
-     public static void help(){
+     public static void help() {
           println("You requested the output of the documentation for the Tools class.");
-          println("Beginning output of information..."); enter(); enter();
-          println("Type: \t\t\t\t\tMethods in Tools class: "); enter();
+          println("Beginning output of information...");
+          enter();
+          enter();
+          println("Type: \t\t\t\t\tMethods in Tools class: ");
+          enter();
 
           println("void \t\t\t\t\tprint(String str)");
           println("\t\t\t\t\t\t\t\tPrints the inputted String value. ");
@@ -138,11 +141,14 @@ public class Tools {
      }
 }
 
-class math extends Tools{
-     public static void help(){
+class math extends Tools {
+     public static void help() {
           println("You requested the output of the documentation for the math subclass.");
-          println("Beginning output of information..."); enter(); enter();
-          println("Type: \t\t\t\t\tMethods in Tools class: "); enter();
+          println("Beginning output of information...");
+          enter();
+          enter();
+          println("Type: \t\t\t\t\tMethods in Tools class: ");
+          enter();
 
           println("boolean \t\t\t\tisDivisible(int num1, int num2)");
           println("\t\t\t\t\t\t\t\tReturns true if parameter num1 is divisible by parameter num2. ");
@@ -152,9 +158,15 @@ class math extends Tools{
 
           println("void \t\t\t\t\tprintFactors(int num)");
           println("\t\t\t\t\t\t\t\tPrints the prime factors of the inputted integer. ");
+
+          println("int \t\t\t\t\tgcf(int a, int b)");
+          println("\t\t\t\t\t\t\t\tReturns the greatest common factor of the two inputted integers. ");
+
+          println("int \t\t\t\t\tsumOfDigits(int num)");
+          println("\t\t\t\t\t\t\t\tReturns the sum of the digits in the inputted integer. Inputted integer must be base 10. ");
      }
 
-     public static boolean isDivisible(int num1, int num2){
+     public static boolean isDivisible(int num1, int num2) {
           boolean flag = false;
           double check = 1.0 * num1 / num2;
 
@@ -181,19 +193,45 @@ class math extends Tools{
           return flag;
      }
 
-     public static void printFactors(int num){
-          if (isPrime(num)){
+     public static void printFactors(int num) {
+          if (isPrime(num)) {
                Tools.println("1\n" + num);
           } else {
                int holder = num;
 
-               for (int i = 2; i <= num; i++){
-                    if (isDivisible(holder, i)){
+               for (int i = 2; i <= num; i++) {
+                    if (isDivisible(holder, i)) {
                          Tools.println(i);
-                         holder = holder/i;
+                         holder = holder / i;
                          i--;
                     }
                }
           }
+     }
+
+     public static int gcf(int a, int b) {
+          Scanner scan = new Scanner(System.in);
+
+          while (b != 0) {
+               int r = a % b;
+               a = b;
+               b = r;
+          }
+
+          return a;
+
+     }
+
+     public static int sumOfDigits(int num){
+          int sum = 0;
+
+          while (num > 0)
+          {
+               sum += num % 10;
+               num /= 10;
+          }
+
+          return num;
+
      }
 }
