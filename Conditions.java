@@ -6,11 +6,10 @@ import java.util.Scanner;
  * @author Vivek Ily
  * @version November 20th, 2020
  */
-public class Conditions
-{
-     public static void ifExample(){
+public class Conditions {
+     public static void ifExample() {
           //model a coin flip; 1: heads, 0: tails
-          int coinFlip = (int)(Math.random() * 2);
+          int coinFlip = (int) (Math.random() * 2);
 
           /*
 
@@ -24,7 +23,7 @@ public class Conditions
 
            */
 
-          if(coinFlip == 1){
+          if (coinFlip == 1) {
                Tools.println("Coin is heads!");
           }
 
@@ -35,16 +34,14 @@ public class Conditions
 
            */
 
-          if(coinFlip == 1){
+          if (coinFlip == 1) {
                Tools.println("Coin is heads!");
-          }
-
-          else{
+          } else {
                Tools.println("Coin is tails!");
           }
 
           //model the roll of a four-sided die [1-4]
-          int dieRoll = (int)(Math.random() * 4) + 1;
+          int dieRoll = (int) (Math.random() * 4) + 1;
 
           /*
 
@@ -53,16 +50,13 @@ public class Conditions
 
            */
 
-          if(dieRoll == 1){
+          if (dieRoll == 1) {
                Tools.println("Rolled a one");
-          }
-          else if(dieRoll == 2){
+          } else if (dieRoll == 2) {
                Tools.println("Rolled a two");
-          }
-          else if(dieRoll == 3){
+          } else if (dieRoll == 3) {
                Tools.println("Rolled a three");
-          }
-          else{
+          } else {
                Tools.println("Rolled a four");
           }
 
@@ -71,13 +65,13 @@ public class Conditions
           { } are not required, but it is a good idea to use them always to avoid bugs like this:
 
            */
-          if(coinFlip == 0)
+          if (coinFlip == 0)
                Tools.println("Coin is tails!");
-               Tools.println("Better luck next time...");
+          Tools.println("Better luck next time...");
 
      }
 
-     public static boolean doublesAreEqual(double num1, double num2){
+     public static boolean doublesAreEqual(double num1, double num2) {
           /*
 
           If we use the equality operator (==) for doubles, it will only return true if all binary digits match.
@@ -88,7 +82,7 @@ public class Conditions
 
           final double EPSILON = 1e-14;
 
-          if (Math.abs(num1 - num2) < EPSILON){
+          if (Math.abs(num1 - num2) < EPSILON) {
                return true;
           }
 
@@ -98,7 +92,7 @@ public class Conditions
           //return Math.abs(num1 - num2) < EPSILON
      }
 
-     public static void stringExample(){
+     public static void stringExample() {
           Scanner scan = new Scanner(System.in);
           Tools.print("Enter two words: ");
           String str1 = scan.next();
@@ -110,10 +104,9 @@ public class Conditions
           For variables of a class type, including Strings, this means they contain the same reference. That is, they refer to the same object in memory, not that two Strings have the same sequence of characters.
 
            */
-          if(str1 == str2){
+          if (str1 == str2) {
                Tools.println("String references are equal");
-          }
-          else{
+          } else {
                Tools.println("String references are not equal");
           }
 
@@ -126,10 +119,9 @@ public class Conditions
 
            */
 
-          if(str1.equals(str2)){
+          if (str1.equals(str2)) {
                Tools.println("Strings are equal");
-          }
-          else{
+          } else {
                Tools.println("Strings are not equal");
           }
 
@@ -147,18 +139,16 @@ public class Conditions
           int result = str1.compareTo(str2);
           String firstStr = null;
 
-          if(result < 0){
+          if (result < 0) {
                firstStr = str1;
-          }
-          else if(result > 0){
+          } else if (result > 0) {
                firstStr = str2;
           }
 
-          if(firstStr != null) {
+          if (firstStr != null) {
                Tools.println("The first string is: " + firstStr);
                Tools.println("Its length is: " + firstStr.length());
-          }
-          else{
+          } else {
                Tools.println("Strings are equal");
           }
 
@@ -169,7 +159,7 @@ public class Conditions
           For an AND operation, if the left operand is false, the right operand will not be evaluated because the AND operation is false regardless.
 
            */
-          if(firstStr != null && firstStr.length() > 3){
+          if (firstStr != null && firstStr.length() > 3) {
                Tools.println("The first string has more than 3 characters.");
           }
 
@@ -182,7 +172,7 @@ public class Conditions
           This may result in a bug. If ht efirst word is "kiwi", we will never read the second word from the stream, which may result in unexpected behaviour.
            */
           Tools.print("Enter your two favorite fruits: ");
-          if(scan.next().equals("kiwi") || scan.next().equals("kiwi")){
+          if (scan.next().equals("kiwi") || scan.next().equals("kiwi")) {
                Tools.println("Kiwi is one of my favorites too!");
           }
 
@@ -191,7 +181,7 @@ public class Conditions
           Tools.println("Your favorite ice cream flavor is: " + flavor);
      }
 
-     public static void extraOperatorsExample(){
+     public static void extraOperatorsExample() {
           /*
 
           augmented assignment operators: +=, -=, *=, /=, %=
@@ -223,7 +213,7 @@ public class Conditions
           a--; //decrement as well!
      }
 
-     public static void whileExample(){
+     public static void whileExample() {
           /*
 
           while loop:
@@ -235,7 +225,7 @@ public class Conditions
 
           int count = 1;                     // initialization
 
-          while (count <= 5){                // condition
+          while (count <= 5) {                // condition
                Tools.println(count);         // body
 
                count++;                      // update the loop variable
@@ -244,7 +234,7 @@ public class Conditions
           Tools.println("Done.");
      }
 
-     public static void whileExample2(){
+     public static void whileExample2() {
           /*
 
           This is an infinite loop!
@@ -253,7 +243,7 @@ public class Conditions
                while(count < 50)
            */
           int count = 1;
-          while(count != 50){
+          while (count != 50) {
                Tools.println(count);
                count += 2;
           }
@@ -261,7 +251,7 @@ public class Conditions
           Tools.println("Done.");
      }
 
-     public static void forExample(){
+     public static void forExample() {
           /*
 
           for loop:
@@ -272,7 +262,7 @@ public class Conditions
                     3. update the loop variable - executed at the *end* of each iteration *before* evaluating the condition again
            */
 
-          for (int count = 1; count <= 5; count++){
+          for (int count = 1; count <= 5; count++) {
                Tools.println(count);
           }
 
@@ -285,9 +275,9 @@ public class Conditions
           //Tools.println("Final value of count: " + count);
      }
 
-     public static void forExample2(){
+     public static void forExample2() {
           int count = 1;
-          for (; count <= 5; count++){
+          for (; count <= 5; count++) {
                Tools.println(count);
           }
 
@@ -296,7 +286,7 @@ public class Conditions
           Tools.println("Final value of count: " + count);
      }
 
-     public static void offByOne(){
+     public static void offByOne() {
           // We want to print five "*"
 
           /*
@@ -310,14 +300,14 @@ public class Conditions
           "Think! Don't compile and try at random!"
            */
 
-          for (int i = 0; i <= 5; i++){ // should be i < 5
+          for (int i = 0; i <= 5; i++) { // should be i < 5
                Tools.print("* ");
           }
 
           Tools.print("\n1 2 3 4 5");
      }
 
-     public static void doExample(){
+     public static void doExample() {
           /*
 
           do loop (do-while loop)
@@ -330,16 +320,67 @@ public class Conditions
 
           int count = 1;
 
-          do{
+          do {
                Tools.println(count);         // body
                count++;                      // update the loop variable
           }
-          while(count <= 5);
+          while (count <= 5);
 
           Tools.println("Complete.");
      }
 
-     public static void main(String[] args){
-          doExample();
+     public static int sum() {
+          Scanner s = new Scanner(System.in);
+
+          int sum = 0;
+          int value;
+
+          do {
+               Tools.print("Enter a positive integer (-1 to quit): ");
+
+               /*
+
+               Sentinel Value
+                    Value (e.g., -1) used to terminate a loop. It is often entered by a user.
+                */
+
+               /*
+
+               The hasNextInt method of the Scanner class returns true if the next token to be read is an integer. Else, it returns false. It does not consume the token. If there are no tokens in the stream, it waits until there are.
+
+                */
+               if (s.hasNextInt()) {
+                    Tools.println("\"" + s.next() + "\" is not an integer. Try again.");
+
+                    /*
+
+                    continue
+                         1. immediately skips to the end of the inner-most loop.
+                         2. re-evaluates the loop condition at that point and continues if the condition is true.
+
+                     */
+               }
+               value = s.nextInt();
+
+               if (value == -1) {
+                    /*
+
+                    break
+                         Immediately exits the inner-most loop. Similar behaviour as in switch statements.
+
+                     */
+                    break;
+               }
+               // this is a bug! sum is 1 less than it should be.
+               sum += value;
+          }
+          while (value != -1);
+
+          return sum;
+     }
+
+     public static void main(String[] args) {
+          Tools.printFactors(150);
+          Tools.help();
      }
 }
