@@ -1,6 +1,9 @@
 import java.awt.*;
+import java.util.Scanner;
 
 public class Tools {
+     public static math math;
+
      public static void help(){
           println("You requested the output of the documentation for the Tools class.");
           println("Beginning output of information..."); enter(); enter();
@@ -48,14 +51,7 @@ public class Tools {
           println("double[] \t\t\t\tadd(double[] a, double b)");
           println("\t\t\t\t\t\t\t\tAdds the double value b to the end of preexisting double array a and returns the new double array. ");
 
-          println("boolean \t\t\t\tisDivisible(int num1, int num2)");
-          println("\t\t\t\t\t\t\t\tReturns true if parameter num1 is divisible by parameter num2. ");
-
-          println("boolean \t\t\t\tisPrime(int num)");
-          println("\t\t\t\t\t\t\t\tReturns true if the inputted integer is prime. ");
-
-          println("void \t\t\t\t\tprintFactors(int num)");
-          println("\t\t\t\t\t\t\t\tPrints the prime factors of the inputted integer. ");
+          println("To request the output of the documentation for the math subclass, type \'Tools.math.help();\'");
 
      }
 
@@ -140,6 +136,23 @@ public class Tools {
           newArray[newLen - 1] = b;
           return newArray;
      }
+}
+
+class math extends Tools{
+     public static void help(){
+          println("You requested the output of the documentation for the math subclass.");
+          println("Beginning output of information..."); enter(); enter();
+          println("Type: \t\t\t\t\tMethods in Tools class: "); enter();
+
+          println("boolean \t\t\t\tisDivisible(int num1, int num2)");
+          println("\t\t\t\t\t\t\t\tReturns true if parameter num1 is divisible by parameter num2. ");
+
+          println("boolean \t\t\t\tisPrime(int num)");
+          println("\t\t\t\t\t\t\t\tReturns true if the inputted integer is prime. ");
+
+          println("void \t\t\t\t\tprintFactors(int num)");
+          println("\t\t\t\t\t\t\t\tPrints the prime factors of the inputted integer. ");
+     }
 
      public static boolean isDivisible(int num1, int num2){
           boolean flag = false;
@@ -169,13 +182,13 @@ public class Tools {
      }
 
      public static void printFactors(int num){
-          if (Tools.isPrime(num)){
+          if (isPrime(num)){
                Tools.println("1\n" + num);
           } else {
                int holder = num;
 
                for (int i = 2; i <= num; i++){
-                    if (Tools.isDivisible(holder, i)){
+                    if (isDivisible(holder, i)){
                          Tools.println(i);
                          holder = holder/i;
                          i--;
