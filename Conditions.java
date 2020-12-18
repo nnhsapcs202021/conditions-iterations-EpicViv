@@ -380,7 +380,6 @@ public class Conditions {
      }
 
      public static void main(String[] args) {
-          Tools.printFactors(150);
-          Tools.help();
+          Tools.print(Tools.isPrime(6));
      }
 }
