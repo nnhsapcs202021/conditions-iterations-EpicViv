@@ -108,13 +108,28 @@ public class ColorManipulator
                 pixel.setColor( negated );
             }
         }
+        Tools.println("Negative modification implemented.");
     }
 
     /**
      * Creates a grayscale effect on the picture by changing each RGB value of each pixel to the average of the RGB values.
      */
     public void grayscale(){
+        int width = this.picture.getWidth();
+        int height = this.picture.getHeight();
 
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = this.picture.getPixel( x, y );
+                int red = pixel.getRed(); int green = pixel.getGreen(); int blue = pixel.getBlue();
+                int average = (red + green + blue)/3;
+
+                pixel.setRed(average); pixel.setGreen(average); pixel.setBlue(average);
+            }
+        }
+        Tools.println("Grayscale modification implemented.");
     }
 
     public static void main(String args[])
@@ -123,8 +138,8 @@ public class ColorManipulator
         Picture picture= new Picture( "Selfie.jpg" );
         ColorManipulator manipulator = new ColorManipulator( picture );
 
-        picture.explore();
-        manipulator.maxGreen();
-        picture.explore();
+        picture.explore(); Tools.println("\nPushed original picture to screen.");
+        manipulator.grayscale();
+        picture.explore(); Tools.println("Pushed picture to screen.");
     }
 }

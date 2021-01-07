@@ -55,6 +55,10 @@ public class ColorManipulatorTest{
         int actualGreen = pixel.getGreen();
         int actualBlue = pixel.getBlue();
 
+        Tools.println("Expected: " + expected);
+        Tools.println("Post-modification:");
+        Tools.println("Red: " + pixel.getRed() + "; Green: " + pixel.getGreen() + "; Blue: " + pixel.getBlue());
+
         assertEquals(expected, actualRed);
         assertEquals(expected, actualGreen);
         assertEquals(expected, actualBlue);
