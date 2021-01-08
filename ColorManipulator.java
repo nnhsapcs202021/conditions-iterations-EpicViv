@@ -139,6 +139,6 @@ public class ColorManipulator
 
         picture.explore(); Tools.println("\nPushed original picture to screen.");
         manipulator.grayscale();
-        picture.explore(); Tools.println("Pushed picture to screen.");
+        picture.explore(); Tools.println("Pushed grayscale picture to screen.");
     }
 }
