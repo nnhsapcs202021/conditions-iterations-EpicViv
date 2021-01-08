@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.Scanner;
 
 /**
  * Transforms a picture by applying a Shepard Fairey-inspired effect using a custom-selected color scheme.
@@ -104,6 +105,7 @@ public class ShepardFairey
 
     public static void main(String args[])
     {
+        Scanner scan = new Scanner(System.in);
         // create a new picture object based on the original selfie
         //  (the selfie image must be in the Shepard Fairey folder)
         Picture selfie = new Picture( "Selfie.jpg" );
@@ -111,6 +113,7 @@ public class ShepardFairey
         // create a ShepardFairey object to transform the selfie picture
         ShepardFairey fairey = new ShepardFairey( selfie );
 
+        Tools.print("Do you want to write a jpg file for this picture? (Enter 1 if yes, enter 2 if no): "); int flag = scan.nextInt();
         // display the original selfie picture
         selfie.explore();
 
@@ -126,6 +129,8 @@ public class ShepardFairey
          * You may need to specify an absolute path. For example:
          *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
          */
-        selfie.write( "C:\\Users\\Vivek\\OneDrive\\Documents\\GitHub\\conditions-iterations-EpicViv\\SelfiePosterizedCustom.jpg" );
+        if(flag == 1) {
+            selfie.write("C:\\Users\\Vivek\\OneDrive\\Documents\\GitHub\\conditions-iterations-EpicViv\\SelfiePosterizedCustom.jpg");
+        }
     }
 }
