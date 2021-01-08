@@ -81,19 +81,19 @@ public class ShepardFairey
                     pixel.setColor(Color.GRAY);
                 }
                 else if(red < this.subrange2 && (10 > Math.sqrt(Math.pow(x-204, 2) + Math.pow(y-319, 2)))){
-                    pixel.setColor(new Color(41, 135, 233));
+                    pixel.setColor(new Color(0, 125, 255));
                 }
                 else if(red < this.subrange2 && (10 > Math.sqrt(Math.pow(x-351, 2) + Math.pow(y-314, 2)))){
-                    pixel.setColor(new Color(41, 135, 233));
+                    pixel.setColor(new Color(0, 125, 255));
                 }
                 else if(red < this.subrange3 && (10 < Math.sqrt(Math.pow(x-204, 2) + Math.pow(y-319, 2))) && (10 < Math.sqrt(Math.pow(x-351, 2) + Math.pow(y-314, 2)))){
                     pixel.setColor(new Color(255, 86, 1));
                 }
                 else if(red < this.subrange3 && (10 > Math.sqrt(Math.pow(x-204, 2) + Math.pow(y-319, 2)))){
-                    pixel.setColor(new Color(41, 135, 233));
+                    pixel.setColor(new Color(0, 125, 255));
                 }
                 else if(red < this.subrange3 && (10 > Math.sqrt(Math.pow(x-351, 2) + Math.pow(y-314, 2)))){
-                    pixel.setColor(new Color(41, 135, 233));
+                    pixel.setColor(new Color(0, 125, 255));
                 }
                 else if(red < this.subrange4){
                     pixel.setColor(Color.WHITE);
