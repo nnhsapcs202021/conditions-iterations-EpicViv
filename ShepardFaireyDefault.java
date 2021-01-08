@@ -1,13 +1,13 @@
-import java.awt.Color;
+import java.awt.*;
 
 /**
- * Transforms a picture by applying a Shepard Fairey-inspired effect using a custom-selected color scheme.
+ * Transforms a picture by applying a Shepard Fairey-inspired effect using the provided color scheme.
  *
  * @author Vivek Ily
  * @version January 7, 2021
  */
-public class ShepardFairey
-{
+public class ShepardFaireyDefault {
+
     private ColorManipulator manipulator;
     private Picture picture;
 
@@ -22,7 +22,7 @@ public class ShepardFairey
     private static final Color RED = new Color( 198, 50, 45 );
     private static final Color DARK_BLUE = new Color( 16, 48, 77 );
 
-    public ShepardFairey( Picture newPicture )
+    public ShepardFaireyDefault(Picture newPicture )
     {
         this.manipulator = new ColorManipulator( newPicture );
         this.picture = newPicture;
@@ -31,7 +31,7 @@ public class ShepardFairey
     }
 
     /**
-     * Posterize the picture by applying a Shepard Fairey-inspired effect using a custom-selected color scheme.
+     * Posterize the picture by applying a Shepard Fairey-inspired effect using the provided color scheme.
      *
      */
     public void posterize(){
@@ -72,31 +72,16 @@ public class ShepardFairey
                 int red = pixel.getRed();
 
                 if(red < this.subrange1){
-                    pixel.setColor(Color.BLACK);
+                    pixel.setColor(this.OFF_WHITE);
                 }
-                else if((x == 204 && y == 315) || (x == 204 && y == 314) || (x == 205 && y == 315) || ((x >= 347 && x <= 353) && y == 310) || ((x >= 347 && x <= 352) && y == 309) || ((x >= 347 && x <= 354) && y == 311) || (x == 351 && y == 308)){
-                    pixel.setColor(Color.BLACK);
+                else if(red < this.subrange2){
+                    pixel.setColor(this.DARK_BLUE);
                 }
-                else if(red < this.subrange2 && (10 < Math.sqrt(Math.pow(x-204, 2) + Math.pow(y-319, 2))) && (10 < Math.sqrt(Math.pow(x-351, 2) + Math.pow(y-314, 2)))){
-                    pixel.setColor(Color.GRAY);
-                }
-                else if(red < this.subrange2 && (10 > Math.sqrt(Math.pow(x-204, 2) + Math.pow(y-319, 2)))){
-                    pixel.setColor(new Color(41, 135, 233));
-                }
-                else if(red < this.subrange2 && (10 > Math.sqrt(Math.pow(x-351, 2) + Math.pow(y-314, 2)))){
-                    pixel.setColor(new Color(41, 135, 233));
-                }
-                else if(red < this.subrange3 && (10 < Math.sqrt(Math.pow(x-204, 2) + Math.pow(y-319, 2))) && (10 < Math.sqrt(Math.pow(x-351, 2) + Math.pow(y-314, 2)))){
-                    pixel.setColor(new Color(255, 86, 1));
-                }
-                else if(red < this.subrange3 && (10 > Math.sqrt(Math.pow(x-204, 2) + Math.pow(y-319, 2)))){
-                    pixel.setColor(new Color(41, 135, 233));
-                }
-                else if(red < this.subrange3 && (10 > Math.sqrt(Math.pow(x-351, 2) + Math.pow(y-314, 2)))){
-                    pixel.setColor(new Color(41, 135, 233));
+                else if(red < this.subrange3){
+                    pixel.setColor(this.RED);
                 }
                 else if(red < this.subrange4){
-                    pixel.setColor(Color.WHITE);
+                    pixel.setColor(this.LIGHT_BLUE);
                 }
             }
         }
@@ -109,23 +94,23 @@ public class ShepardFairey
         Picture selfie = new Picture( "Selfie.jpg" );
 
         // create a ShepardFairey object to transform the selfie picture
-        ShepardFairey fairey = new ShepardFairey( selfie );
+        ShepardFaireyDefault fairey = new ShepardFaireyDefault( selfie );
 
         // display the original selfie picture
         selfie.explore();
 
         // posterize the selfie picture by applying a Shepard Fairey-inspired effect
         fairey.posterize();
-        
+
         // display the posterized selfie picture
         selfie.explore();
 
         // save the transformed selfie picture
-        
+
         /* This code doesn't work for some students for unknown reasons.
          * You may need to specify an absolute path. For example:
          *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
          */
-        selfie.write( "C:\\Users\\Vivek\\OneDrive\\Documents\\GitHub\\conditions-iterations-EpicViv\\SelfiePosterizedCustom.jpg" );
+        selfie.write( "C:\\Users\\Vivek\\OneDrive\\Documents\\GitHub\\conditions-iterations-EpicViv\\SelfiePosterizedDefault.jpg" );
     }
 }
