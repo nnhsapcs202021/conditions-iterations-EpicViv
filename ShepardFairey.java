@@ -111,6 +111,6 @@ public class ShepardFairey
          * You may need to specify an absolute path. For example:
          *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
          */
-        //selfie.write( "C:\\Users\\Vivek\\OneDrive\\Documents\\GitHub\\conditions-iterations-EpicViv\\SelfiePosterized.jpg" );
+        selfie.write( "C:\\Users\\Vivek\\OneDrive\\Documents\\GitHub\\conditions-iterations-EpicViv\\SelfiePosterized.jpg" );
     }
 }
