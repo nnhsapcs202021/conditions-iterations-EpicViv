@@ -127,6 +127,87 @@ public class Filter
         }
     }
 
+    public static void negate(){
+        int width = Filter.picture.getWidth();
+        int height = Filter.picture.getHeight();
+
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = Filter.picture.getPixel( x, y );
+                Color color = pixel.getColor();
+
+                int negatedRed = 255 - color.getRed();
+                int negatedBlue = 255 - color.getBlue();
+                int negatedGreen = 255 - color.getGreen();
+
+                Color negated = new Color( negatedRed, negatedBlue, negatedGreen );
+                pixel.setColor( negated );
+            }
+        }
+        Tools.println("Negative modification implemented.");
+    }
+
+    public static void maxBlue(){
+        int width = Filter.picture.getWidth();
+        int height = Filter.picture.getHeight();
+
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = Filter.picture.getPixel( x, y );
+                pixel.setBlue( 255 );
+            }
+        }
+    }
+
+    public static void maxRed(){
+        int width = Filter.picture.getWidth();
+        int height = Filter.picture.getHeight();
+
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = Filter.picture.getPixel( x, y );
+                pixel.setRed( 255 );
+            }
+        }
+    }
+
+    public static void maxGreen(){
+        int width = Filter.picture.getWidth();
+        int height = Filter.picture.getHeight();
+
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = Filter.picture.getPixel( x, y );
+                pixel.setGreen( 255 );
+            }
+        }
+    }
+
+    public static void grayscale(){
+        int width = Filter.picture.getWidth();
+        int height = Filter.picture.getHeight();
+
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = Filter.picture.getPixel( x, y );
+                int red = pixel.getRed(); int green = pixel.getGreen(); int blue = pixel.getBlue();
+                int average = (red + green + blue)/3;
+
+                pixel.setRed(average); pixel.setGreen(average); pixel.setBlue(average);
+            }
+        }
+    }
+
     public static void main(String args[])
     {
         Scanner scan = new Scanner(System.in);
