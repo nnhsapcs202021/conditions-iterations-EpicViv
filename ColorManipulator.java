@@ -129,7 +129,6 @@ public class ColorManipulator
                 pixel.setRed(average); pixel.setGreen(average); pixel.setBlue(average);
             }
         }
-        Tools.println("Grayscale modification implemented.");
     }
 
     public static void main(String args[])
